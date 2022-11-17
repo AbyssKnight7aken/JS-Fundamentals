@@ -3,7 +3,7 @@ function matchPhoneNumber(inputData) {
     let pattern = /(?<!\d)[+]359([ -])2\1\d{3}\1\d{4}\b/g;
 
     let text = inputData.shift();
-    let validNumbers = text.match(pattern)
+    let validNumbers = text.match(pattern);
 
     console.log(validNumbers.join(', '));
 }
