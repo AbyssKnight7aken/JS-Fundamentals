@@ -2,10 +2,14 @@ function softUniBarIncome(inputData) {
 
     const customerInfo = {};
     let entry = inputData.shift();
-    //let pattern = //g;
+    let pattern = /%(?<name>[A-Z][a-z]+)%[^|&%.]*<(?<product>\w+)>[^|&%.]*\|(?<count>\d+)\|[^\d|&%.]*(?<price>[0-9|\.]+)\$/g;
 
     while (entry !== 'end of shift') {
+        let currentDAta = pattern.exec(entry);
+        console.log(currentDAta);
         //to do...
+        entry = inputData.shift();
+        currentDAta = pattern.exec(entry);
     }
 
 }
