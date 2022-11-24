@@ -51,6 +51,7 @@ function passwordReset(input) {
         }
     }
 }
+
 passwordReset([
     "Siiceercaroetavm!:?:ahsott.:i:nstupmomceqr",
     "TakeOdd",
