@@ -7,7 +7,6 @@ function adAstra(input) {
     const caloriesPerDay = 2000;
 
     let match = pattern.exec(text);
-    console.log(match);
 
     while (match) {
         let foodName = match.groups.name;
@@ -20,14 +19,13 @@ function adAstra(input) {
         match = pattern.exec(text);
     }
 
-    const result = Object.entries(foodInfo);
     const days = Math.trunc(totalCalories / caloriesPerDay);
 
     console.log(`You have food to last you for: ${days} days!`);
 
-    result.forEach(element => {
-        console.log(`Item: ${element[0]}, Best before: ${element[1].expDate}, Nutrition: ${element[1].energy}`);
-    });
+    for (const key in foodInfo) {
+        console.log(`Item: ${key}, Best before: ${foodInfo[key].expDate}, Nutrition: ${foodInfo[key].energy}`);
+    }
 
 }
 
