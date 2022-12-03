@@ -7,7 +7,9 @@ function arenaTier(input) {
     while (entry !== 'Ave Cesar') {
 
         if (entry.includes(' -> ')) {
+
             let [name, skill, points] = entry.split(' -> ');
+
             if (!gladiators[name]) {
                 gladiators[name] = {};
                 gladiators[name][skill] = Number(points);
@@ -25,7 +27,9 @@ function arenaTier(input) {
             }
 
         } else if (entry.includes(' vs ')) {
+
             let [gladiator1, gladiator2] = entry.split(' vs ');
+
             if (gladiators[gladiator1] && gladiators[gladiator2]) {
                 let techniques1 = Object.keys(gladiators[gladiator1]);
                 let index1 = techniques1.indexOf('totalPoints');
@@ -33,12 +37,13 @@ function arenaTier(input) {
                 let techniques2 = Object.keys(gladiators[gladiator2]);
                 let index2 = techniques2.indexOf('totalPoints');
                 techniques2.splice(index1, 1);
+                
                 for (let i = 0; i < techniques1.length; i++) {
                     if (techniques2.includes(techniques1[i])) {
                         if (gladiators[gladiator1].totalPoints > gladiators[gladiator2].totalPoints) {
-                            delete gladiators[gladiator2];
+                            delete gladiators[gladiator2]; break;
                         } else if (gladiators[gladiator1].totalPoints < gladiators[gladiator2].totalPoints) {
-                            delete gladiators[gladiator1];
+                            delete gladiators[gladiator1]; break;
                         }
                     }
                 }
@@ -50,12 +55,12 @@ function arenaTier(input) {
     }
 
     let sorted = Object.entries(gladiators)
-        .sort((a, b) => b[1].totalPoints - a[1].totalPoints || a[0].localeCompare(b[0]));
+        .sort((a, b) => { return b[1].totalPoints - a[1].totalPoints || a[0].localeCompare(b[0]) });
 
     for (const gladiator of sorted) {
         console.log(`${gladiator[0]}: ${gladiator[1].totalPoints} skill`);
 
-        let sortedSkills = Object.entries(gladiator[1]).sort((a, b) => b[1] - a[1] || a[0].localeCompare(b[0]))
+        let sortedSkills = Object.entries(gladiator[1]).sort((a, b) => { return b[1] - a[1] || a[0].localeCompare(b[0]) })
 
         sortedSkills.forEach(skill => {
             if (skill[0] !== 'totalPoints') {
@@ -84,14 +89,14 @@ function arenaTier(input) {
 //     'Gladius vs Maximilian',
 //     'Ave Cesar'])
 
-    arenaTier([
-        'Peter -> Duck -> 400',
-        'Julius -> Shield -> 150',
-        'Gladius -> Heal -> 200',
-        'Gladius -> Heal -> 300',
-        'Gladius -> Support -> 250',
-        'Gladius -> Shield -> 250',
-        'Peter vs Gladius',
-        'Gladius vs Julius',
-        'Gladius vs Maximilian',
-        'Ave Cesar'])  
+arenaTier([
+    'Peter -> Duck -> 400',
+    'Julius -> Shield -> 150',
+    'Gladius -> Heal -> 200',
+    'Gladius -> Heal -> 300',
+    'Gladius -> Support -> 250',
+    'Gladius -> Shield -> 250',
+    'Peter vs Gladius',
+    'Gladius vs Julius',
+    'Gladius vs Maximilian',
+    'Ave Cesar'])  
