@@ -19,7 +19,6 @@ function degustationParty(input) {
 
     function like(name, meal) {
         if (!guests[name]) {
-            guests[name] = {};
             guests[name] = { meals: [] };
             guests[name].meals.push(meal);
         } else if (!guests[name].meals.includes(meal)) {
@@ -33,7 +32,7 @@ function degustationParty(input) {
             guests[name].meals.splice(index, 1);
             dislikeCounter++;
             console.log(`${name} doesn't like the ${meal}.`);
-            
+
         } else if (!guests[name]) {
             console.log(`${name} is not at the party.`);
         }
@@ -52,11 +51,11 @@ function degustationParty(input) {
 
 }
 
-// degustationParty(["Like-Krisi-shrimps",
-// "Like-Krisi-soup",
-// "Like-Penelope-dessert",
-// "Like-Misho-salad",
-// "Stop"])
+degustationParty(["Like-Krisi-shrimps",
+    "Like-Krisi-soup",
+    "Like-Penelope-dessert",
+    "Like-Misho-salad",
+    "Stop"])
 
 
 // degustationParty(["Like-Krisi-shrimps",
@@ -65,6 +64,6 @@ function degustationParty(input) {
 // "Stop"])
 
 
-degustationParty(["Like-Katy-fish",
-    "Dislike-Katy-fish",
-    "Stop"])
+// degustationParty(["Like-Katy-fish",
+//     "Dislike-Katy-fish",
+//     "Stop"])
