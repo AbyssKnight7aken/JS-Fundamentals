@@ -30,9 +30,11 @@ function theImitationGame(inputData) {
     }
 
     function changeAll(substring, replacement) {
-        while (message.includes(substring)) {
-            message = message.replace(substring, replacement);
-        }
+        const regex = new RegExp(substring, 'g');
+        message = message.replace(regex, replacement);
+        // while (message.includes(substring)) {
+        //     message = message.replace(substring, replacement);
+        // }
     }
 
 }
