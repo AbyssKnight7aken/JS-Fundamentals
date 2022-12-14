@@ -28,9 +28,11 @@ function secretChar(input) {
                 
             case 'ChangeAll':
                 let replacement = entry.split(':|:')[2];
-                while (message.includes(value1)) {
-                    message = message.replace(value1, replacement);
-                }
+                const regex = new RegExp(value1, 'g');
+                message = message.replace(regex, replacement);
+                // while (message.includes(value1)) {
+                //     message = message.replace(value1, replacement);
+                // }
                 console.log(message);
                 break;
         }
