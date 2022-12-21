@@ -1,5 +1,6 @@
-function firstAndLastKNumbers(array) {
+function firstAndLastKNumbers(inputArray) {
 
+    let array = inputArray.slice();
     let k = array.shift();
     firstKNumbers = array.slice(0, k);
     lasttKNumbers = array.slice(array.length - k, array.length);
