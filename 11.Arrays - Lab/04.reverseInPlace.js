@@ -1,5 +1,6 @@
-function reverseInPlace(array) {
+function reverseInPlace(inputArray) {
 
+    const array = inputArray.slice();
     for (let i = 0; i < array.length / 2; i++) {
         let tempElement = array[i];
         array[i] = array[array.length - 1 - i];
