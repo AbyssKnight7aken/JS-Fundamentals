@@ -1,6 +1,6 @@
 function condenseArrayToNumber(inputAarray) {
 
-    let array = inputAarray;
+    let array = inputAarray.slice();
     let sum = 0;
     let arrayLength = array.length;
 
@@ -17,7 +17,6 @@ function condenseArrayToNumber(inputAarray) {
 
         array = condensedArray;
         arrayLength--;
-        //console.log(condensedArray);
 
     }
 
