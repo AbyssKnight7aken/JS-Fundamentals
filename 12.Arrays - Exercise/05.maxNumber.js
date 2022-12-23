@@ -1,7 +1,7 @@
-function maxNumber(array) {
+function maxNumber(inputArray) {
 
+    const array = inputArray.slice();
     let buffer = ``;
-    
     let arrayLength = array.length;
 
     for (let k = 0; k < arrayLength; k++) {
