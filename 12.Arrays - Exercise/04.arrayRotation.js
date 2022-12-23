@@ -1,5 +1,6 @@
-function arrayRotation(array, rotations) {
+function arrayRotation(inputArray, rotations) {
 
+    const array = inputArray.slice();
     for (let i = 0; i < rotations; i++) {
         let numberToMove = array.shift();
         array.push(numberToMove);
