@@ -1,7 +1,7 @@
-function rotateArray(array) {
+function rotateArray(inputArray) {
 
+    const array = inputArray.slice();
     let steps = Number(array[array.length - 1]);
-    let arrayLength = array.length;
     array.pop();
 
     for (let i = 0; i < steps; i++) {
