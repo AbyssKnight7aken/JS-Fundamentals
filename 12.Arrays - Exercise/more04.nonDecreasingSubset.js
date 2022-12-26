@@ -1,7 +1,5 @@
 function nonDecreasingSubset(array) {
 
-    //let newArray = array.filter((a, b) => a >= b);
-
     let maxNumber = array[0];
     let arrayLength = array.length;
     let newArray = [array[0]];
