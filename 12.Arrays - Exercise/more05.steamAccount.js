@@ -1,5 +1,6 @@
-function steamAccount(array) {
+function steamAccount(InputArray) {
 
+    const array = InputArray.slice();
     let gamesLibrary = array.shift().split(` `);
     let index = 0;
     let operation = array[index].split(` `);
