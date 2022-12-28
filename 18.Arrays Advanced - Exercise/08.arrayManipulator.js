@@ -1,6 +1,6 @@
 function arrayManipulator(dataArray, commandsArray) {
 
-    let array = dataArray.slice(0);
+    let array = dataArray.slice();
     let arrLength = commandsArray.length;
 
     for (let i = 0; i < arrLength; i++) {
