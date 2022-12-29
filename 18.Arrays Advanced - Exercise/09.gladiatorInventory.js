@@ -1,5 +1,6 @@
-function gladiatorInventory(array) {
+function gladiatorInventory(inputArray) {
 
+    const array = inputArray.slice();
     let inventory = array.shift().split(` `);
     let arrLength = array.length;
 
