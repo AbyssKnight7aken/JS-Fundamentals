@@ -1,5 +1,6 @@
-function partyTime(input) {
+function partyTime(inputData) {
 
+    const input = inputData.slice();
     const vip = [];
     const regular = [];
     let person = input.shift();
