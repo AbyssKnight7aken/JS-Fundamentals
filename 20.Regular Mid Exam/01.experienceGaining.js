@@ -1,5 +1,6 @@
-function experienceGaining(input) {
+function experienceGaining(inputData) {
 
+    const input = inputData.slice();
     let neededXP = Number(input.shift()),
         battleCount = Number(input.shift()),
         experience = 0,
