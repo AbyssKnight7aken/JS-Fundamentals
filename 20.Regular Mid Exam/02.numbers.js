@@ -1,5 +1,6 @@
-function numbers(inputData) {
+function numbers(input) {
 
+    const inputData = input.slice();
     let numbers = inputData.shift().split(` `).map(Number);
     let operation = inputData.shift().split(` `);
     let command = operation[0];
