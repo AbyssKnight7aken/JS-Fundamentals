@@ -1,5 +1,6 @@
-function phoneShop(inputArray) {
+function phoneShop(inputData) {
 
+    const inputArray = inputData.slice();
     phoneStore = inputArray.shift().split(`, `);
     operation = inputArray.shift().split(` - `);
     command = operation[0];
