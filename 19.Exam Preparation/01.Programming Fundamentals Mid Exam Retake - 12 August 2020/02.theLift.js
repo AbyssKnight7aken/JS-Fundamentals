@@ -1,5 +1,6 @@
-function theLift(inputArray) {
+function theLift(inputData) {
 
+    const inputArray = inputData.slice();
     const wagonCapacity = 4;
     let peopleWaiting = Number(inputArray.shift());
     let wagons = inputArray[0].split(` `).map(Number);
