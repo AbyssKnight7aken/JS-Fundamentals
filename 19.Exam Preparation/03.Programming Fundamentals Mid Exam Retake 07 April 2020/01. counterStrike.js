@@ -1,5 +1,6 @@
-function counterStrike(inputArray) {
+function counterStrike(array) {
 
+    const inputArray = array.slice();
     let energy = Number(inputArray.shift());
     let fragCounter = 0;
 
