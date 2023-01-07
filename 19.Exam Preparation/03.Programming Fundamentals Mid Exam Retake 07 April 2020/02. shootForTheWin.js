@@ -1,5 +1,6 @@
-function shootForTheWin(inputArray) {
+function shootForTheWin(input) {
 
+    const inputArray = input.slice();
     let targets = inputArray.shift().split(" ").map(Number);
     let targetShot = 0;
     let index = 0;
