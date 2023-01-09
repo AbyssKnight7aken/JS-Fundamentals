@@ -1,5 +1,6 @@
-function shoppingList(inputArray) {
+function shoppingList(inputData) {
 
+    const inputArray = inputData.slice();
     let shoppingList = inputArray.shift().split("!");
     let currentLine = inputArray.shift();
 
